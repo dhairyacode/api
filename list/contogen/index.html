@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTOGEN | DhairyaCode API's</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/png" href=".../logo.png">
+</head>
+<body>
+  <div class="top-center-text">CONTOGEN</div>
+
+  <div class="description-container">
+    ContoGen is a lightweight, serverless API that generates descriptive content for any given term using Wikipedia as the source. It is designed to be completely free, requires no API key. The API returns up to 400 words of descriptive content about the term provided by the user.
+  </div>
+
+  <!-- Installation Section -->
+  <div class="installation-section">
+    <div class="installation-text">Installation</div>
+    <hr class="divider">
+    <div class="installation-desc">
+      Starting by Installation and Placing the API in your directory;
+    </div>
+    <a href="https://github.com/dhairyacode/contogen/releases/download/v1.0/contogen.js" class="install-link" download>
+      CLICK HERE TO INSTALL
+    </a>
+  </div>
+
+  <!-- Test Section -->
+  <div class="installation-section">
+    <div class="installation-text">TEST</div>
+    <hr class="divider">
+    <div class="installation-desc">
+      To clarify yourself you can test the contogen api by the below;
+    </div>
+    <a href="https://contogen.vercel.app/" class="install-link">
+      CLICK TO TEST THE API
+    </a>
+  </div>
+
+  <!-- API Endpoint Section -->
+  <div class="installation-section">
+    <div class="installation-text">API ENDPOINT</div>
+    <hr class="divider">
+    <div class="code-endpoint">
+      <span>
+        <span class="http-method">GET</span> /api/contogen?query=<span class="query-term">&lt;term&gt;</span>
+      </span>
+	</div>
+	<hr class="space">
+	<div class="installation-desc">
+     Parameters
+    </div>
+	<hr class="space">
+	<div class="table-container">
+    <table class="modern-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>query</td>
+          <td>string</td>
+          <td>The term or keyword to search.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+<!-- Examples Section -->
+  <div class="installation-section">
+    <div class="installation-text">Examples</div>
+    <hr class="divider">
+	<div class="installation-desc">
+     Request
+    </div>
+    <div class="code-endpoint">
+      <span>
+        <span class="http-method">GET</span> https://your-vercel-app.vercel.app/api/contogen?query=Python</span>
+      </span>
+	</div>
+	<hr class="space">
+	<div class="installation-desc">
+     Example Response
+    </div>
+	<hr class="space">
+	  <div class="ex-response">
+       <pre>
+        {
+          "description": "Python is an interpreted, high-level programming language for general-purpose programming. ..."
+        }
+       </pre>
+      </div>
+</div>
+  </div>
+  
+<!-- How it Works Section -->
+  <div class="installation-section">
+    <div class="installation-text">How it Works</div>
+    <hr class="divider">
+	<div class="installation-desc">
+      1) The serverless function (contogen.js) receives the query from the user.
+    </div>
+	<div class="installation-desc">
+      2) It calls the Wikipedia REST API to fetch the summary of the term.
+    </div>
+	<div class="installation-desc">
+      3) If the summary is shorter than 400 words, it fetches the full page content via the Wikipedia action API.
+    </div>
+	<div class="installation-desc">
+      4) The description is truncated to 400 words for consistency.
+    </div>
+	<div class="installation-desc">
+      5) The API returns the description in JSON format.
+    </div>
+	<hr class="space">
+  </div>
+  
+<!-- Frontend Section -->
+  <div class="installation-section">
+    <div class="installation-text">Frontend Usage</div>
+    <hr class="divider">
+	<div class="code-display">
+     <pre><code id="codeBlock">
+      &lt;input id="queryInput" type="text" placeholder="Enter a term"&gt;
+      &lt;button onclick="callAPI()"&gt;Get Description&lt;/button&gt;
+      &lt;div id="output"&gt;&lt;/div&gt;
+
+      &lt;script&gt;
+       async function callAPI() {
+       const query = document.getElementById("queryInput").value.trim();
+       const res = await fetch(`/api/contogen?query=${encodeURIComponent(query)}`);
+       const data = await res.json();
+       document.getElementById("output").textContent = data.description;
+       }
+      &lt;/script&gt;
+     </code></pre>
+    </div>
+
+	<hr class="space">
+  </div>
+
+<!-- GITHUB Section -->
+
+    <hr class="divider">
+	<hr class="space">
+	<a href="https://github.com/dhairyacode/contogen" target="_blank" style="text-decoration: none;">
+    <button class="btn-github">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z" fill="currentcolor"></path>
+    </svg>
+    <span>View on Github</span>
+    </button>
+	<hr class="space">
+	<hr class="space">
+
+ 
+
+<!-- SCRIPTS Section -->
+ 
+  <script src="assets/script.js"></script>
+  <script>
+// Syntax highlighting function
+function highlightCode(code) {
+  return code
+    .replace(/("(?:\\.|[^"\\])*")/g, '<span class="string">$1</span>')         // strings
+    .replace(/\b(async|function|const|let|var|return|if|else)\b/g, '<span class="keyword">$1</span>') // keywords
+    .replace(/\b\d+\.?\d*\b/g, '<span class="number">$&</span>');             // numbers
+}
+
+// Apply highlighting
+const codeBlock = document.getElementById('codeBlock');
+codeBlock.innerHTML = highlightCode(codeBlock.innerHTML);
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* Full black background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Top-centered big text */
+.top-center-text {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Description container */
+.description-container {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 20px 25px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  margin-bottom: 30px;
+}
+
+/* Section headers */
+.installation-text {
+  color: #4da6ff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 150px;
+  border: 0;
+  height: 2px;
+  background-color: #666;
+  margin: 10px auto 20px auto;
+}
+
+/* Section desc */
+.installation-desc {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Install links */
+.install-link {
+  color: #4da6ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.2s, color 0.2s;
+  display: inline-block;
+}
+.install-link:hover {
+  color: #80c1ff;
+  transform: scale(1.1);
+}
+
+.installation-section {
+  margin-bottom: 60px;
+}
+
+/* Code container */
+.code-endpoint {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 15px 30px 15px 20px; /* extra right padding */
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  white-space: nowrap;
+}
+
+/* Syntax coloring */
+.http-method { color: #569cd6; font-weight: bold; }
+.query-term { color: #dcdcaa; font-style: italic; }
+
+.space {
+  width: 150px;
+  border: 0;
+  height: 2px;
+  background-color: #000000;
+  margin: 10px auto 20px auto;
+}
+
+/* Table container to center it */
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Modern white-outline table */
+.modern-table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  color: white;
+}
+
+.modern-table th,
+.modern-table td {
+  border: 1px solid white; /* white outline */
+  padding: 12px 16px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+}
+
+.modern-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modern-table tr:nth-child(even) td {
+  /* optional subtle hover effect */
+  opacity: 0.9;
+}
+
+.modern-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ex-response {
+  color: #2ecc71; /* green text */
+}
+
+.code-display {
+  background-color: #1e1e1e; /* dark container */
+  padding: 16px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: #ffffff; /* default text color */
+}
+
+/* Syntax highlighting colors */
+.code-display .tag { color: #569cd6; }       /* HTML tags */
+.code-display .string { color: #ce9178; }    /* strings */
+.code-display .keyword { color: #c586c0; }   /* JS keywords */
+.code-display .number { color: #b5cea8; }    /* numbers */
+
+
+/* GITHUB */
+
+.btn-github {
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  border: none;
+
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 100px;
+  font-weight: 800;
+  place-content: center;
+
+  padding: 0.75rem 1rem;
+  font-size: 0.825rem;
+  line-height: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.btn-github:hover {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(252, 232, 3, 0.08);
+  color: #fce803;
+  transform: translate(0, -0.25rem);
+  background-color: rgba(0, 0, 0, 0.5);
+}
