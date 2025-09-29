@@ -85,7 +85,7 @@
     </div>
     <div class="code-endpoint">
       <span>
-        <span class="http-method">GET</span> https://yoursite.com/(location of api inside your directory))?query=Python</span>
+        <span class="http-method">GET</span> https://yoursite.com/(location of api)?query=Python</span>
       </span>
 	</div>
 	<hr class="space">
@@ -138,12 +138,15 @@
       &lt;script&gt;
        async function callAPI() {
        const query = document.getElementById("queryInput").value.trim();
-       const res = await fetch(`</code>location of api</code>?query=${encodeURIComponent(query)}`);
+       const res = await fetch(`location of api?query=${encodeURIComponent(query)}`);
        const data = await res.json();
        document.getElementById("output").textContent = data.description;
        }
       &lt;/script&gt;
      </code></pre>
+    </div>
+    <div class="installation-desc">
+     Change the <code>"location of api"</code> to the actual location of api inside your directory.
     </div>
 
 	<hr class="space">
