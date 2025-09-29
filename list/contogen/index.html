@@ -44,9 +44,13 @@
     <hr class="divider">
     <div class="code-endpoint">
       <span>
-        <span class="http-method">GET</span> /api/contogen?query=<span class="query-term">&lt;term&gt;</span>
+        <span class="http-method">GET</span> (location)?query=<span class="query-term">&lt;term&gt;</span>
       </span>
 	</div>
+  <hr class="space">
+    <div class="installation-desc">
+     <code>(location)</code> means the location of api inside your directory.
+    </div>
 	<hr class="space">
 	<div class="installation-desc">
      Parameters
@@ -81,7 +85,7 @@
     </div>
     <div class="code-endpoint">
       <span>
-        <span class="http-method">GET</span> https://your-vercel-app.vercel.app/api/contogen?query=Python</span>
+        <span class="http-method">GET</span> https://yoursite.com/(location of api inside your directory))?query=Python</span>
       </span>
 	</div>
 	<hr class="space">
@@ -134,7 +138,7 @@
       &lt;script&gt;
        async function callAPI() {
        const query = document.getElementById("queryInput").value.trim();
-       const res = await fetch(`/api/contogen?query=${encodeURIComponent(query)}`);
+       const res = await fetch(`</code>location of api</code>?query=${encodeURIComponent(query)}`);
        const data = await res.json();
        document.getElementById("output").textContent = data.description;
        }
